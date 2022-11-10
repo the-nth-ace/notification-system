@@ -1,2 +1,2 @@
 export * from "./client.interface";
-export * from "./notification-client.repository.interface";
+export * from "./client.repository.interface";

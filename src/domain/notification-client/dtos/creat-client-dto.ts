@@ -5,9 +5,8 @@ export class CreateClientDTO {
   @IsEmail()
   email: string;
 
+  @IsString()
   password: string;
-
-  confirm_password: string;
 
   @IsEnum(ClientType)
   type: ClientType;
@@ -15,7 +14,6 @@ export class CreateClientDTO {
   constructor(obj: any) {
     this.email = obj.email;
     this.password = obj.password;
-    this.confirm_password = obj.confirm_password;
     this.type = obj.type;
   }
 }
