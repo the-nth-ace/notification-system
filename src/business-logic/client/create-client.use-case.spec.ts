@@ -1,14 +1,24 @@
 import { CreateClientUseCase } from "./create-client.use-case";
+import { CreateClientRequest } from "./requests/create-client.request";
+import { ClientTestRepository, ClientType } from "@domain/notification-client/";
 
 describe("Create Client use case", () => {
-  const useCase = new CreateClientUseCase();
+  const repo = new ClientTestRepository();
+  const dto: CreateClientRequest = {
+    email: "",
+    password: "",
+    confirm_password: "",
+    name: "",
+    type: ClientType.SINGLE,
+  };
+  const useCase = new CreateClientUseCase(repo, dto);
 
   it("should be defined", () => {
     expect(useCase).toBeDefined();
   });
 
-  it("should have a _ repo", () => {
-    expect(useCase).toHaveProperty("_");
+  it("should have a _clientRepo", () => {
+    expect(useCase).toHaveProperty("_clientRepo");
   });
 
   it("should have a dto property", () => {

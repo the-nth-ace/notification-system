@@ -1,9 +1,5 @@
 export class AuthController {
-  constructor() {
-  }
+  constructor() {}
 
-  async signUp(signUpRequestDTO:){
-
-  }
-
+  async signUp() {}
 }
